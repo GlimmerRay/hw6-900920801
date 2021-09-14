@@ -1,7 +1,6 @@
 import requests
+from credentials import client_id, client_secret
 
-client_id = '9ce28f08c3994bec8fe9ace4cfd29764'
-client_secret = '187c9151f2c7410296619695bdbc8f40'
 scope = 'code'
 token_endpoint = 'https://accounts.spotify.com/api/token'
 grant_type = 'client_credentials'
