@@ -1,0 +1,59 @@
+Spotify api
+There are endpoints
+They return data about artists/albums/tracks
+    So basically access to the db
+You can also get user related info
+The base address is...
+    https://api.spotify.com
+To access user info, 
+    an application must get the users permission
+
+Authorization
+Two reasons
+    User give your app approval to access they data
+    Your app fetch data from spotify
+There are 4 optional authorization flows
+https://developer.spotify.com/documentation/general/guides/authorization-guide/
+
+Authorization Code Flow
+When you register your application,
+    spotify provides you with a client id
+There are certain required query parameters 
+    and certain options
+client_id is required
+response_type = 'code' is required
+redirect_uri is required
+    gives the uri to redirect to after the users
+    grants or denies permission
+state is optional but highly recommended 
+    for security purposes
+scope - optional
+    space separated list
+    if none given, only publicly availabe information
+        will be given. that is, information normally
+        visible in the spotify desktop app
+THIS NOT WHAT I NEED THO!
+
+Client Credentials Flo (https://developer.spotify.com/documentation/general/guides/authorization-guide/#client-credentials-flow)
+Used for server to server authentication (i.e. not from a browser)
+Has a higher rate limit
+can't get user data
+the request is sent to the /api/token endpoint
+make a post request
+POST https://accounts.spotify.com/api/token
+requires a body parameter 'grant type' set to 'client_credentials'
+    if this don work do something bout urlencoded sum 
+        (see tutorial)
+the header parameter is 'Authorization' contains the client_id
+    and the client secret key
+
+
+How to get a access token?
+
+POST request to https://accounts.spotify.com/api/token
+parameters:
+    grant_type: client_credentials,
+    client_id: your_client_id,
+    client_secret: your_client_secret
+
+find these values on your spotify developer dashboard

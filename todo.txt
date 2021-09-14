@@ -1,0 +1,7 @@
+Print the name of at least 10 new releases using the Browse API
+The call to the Browse API is a GET request to 
+    https://api.spotify.com/v1/browse/new-releases and requires
+    a valid access token or user credentials
+
+    this goes under the Authorization header
+
